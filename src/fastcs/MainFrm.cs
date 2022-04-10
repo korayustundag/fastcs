@@ -39,7 +39,7 @@ namespace fastcs
             Settings.AssemblyVersion = "1.0.0.0";
             if (File.Exists(arg))
             {
-                codeBox1.LoadFile(arg, RichTextBoxStreamType.PlainText);
+                codeBox1.Text = File.ReadAllText(arg);
             }
         }
 

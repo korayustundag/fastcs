@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.codeBox1 = new System.Windows.Forms.RichTextBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.txtOutputName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAssemInf = new System.Windows.Forms.Button();
+            this.codeBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.codeBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -50,17 +52,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "C# Code";
-            // 
-            // codeBox1
-            // 
-            this.codeBox1.AcceptsTab = true;
-            this.codeBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.codeBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codeBox1.Location = new System.Drawing.Point(3, 19);
-            this.codeBox1.Name = "codeBox1";
-            this.codeBox1.Size = new System.Drawing.Size(889, 425);
-            this.codeBox1.TabIndex = 2;
-            this.codeBox1.Text = resources.GetString("codeBox1.Text");
             // 
             // btnRun
             // 
@@ -103,6 +94,46 @@
             this.btnAssemInf.UseVisualStyleBackColor = true;
             this.btnAssemInf.Click += new System.EventHandler(this.btnAssemInf_Click);
             // 
+            // codeBox1
+            // 
+            this.codeBox1.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.codeBox1.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n^\\s*(case|default)\\s*[^:]" +
+    "*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            this.codeBox1.AutoScrollMinSize = new System.Drawing.Size(452, 252);
+            this.codeBox1.BackBrush = null;
+            this.codeBox1.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.codeBox1.CharHeight = 18;
+            this.codeBox1.CharWidth = 9;
+            this.codeBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.codeBox1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.codeBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeBox1.Font = new System.Drawing.Font("Consolas", 12F);
+            this.codeBox1.IsReplaceMode = false;
+            this.codeBox1.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.codeBox1.LeftBracket = '(';
+            this.codeBox1.LeftBracket2 = '{';
+            this.codeBox1.Location = new System.Drawing.Point(3, 19);
+            this.codeBox1.Name = "codeBox1";
+            this.codeBox1.Paddings = new System.Windows.Forms.Padding(0);
+            this.codeBox1.RightBracket = ')';
+            this.codeBox1.RightBracket2 = '}';
+            this.codeBox1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.codeBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("codeBox1.ServiceColors")));
+            this.codeBox1.Size = new System.Drawing.Size(889, 425);
+            this.codeBox1.TabIndex = 0;
+            this.codeBox1.Text = resources.GetString("codeBox1.Text");
+            this.codeBox1.Zoom = 100;
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -119,6 +150,7 @@
             this.Name = "MainFrm";
             this.Text = "Fast C# Compiler";
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.codeBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,10 +160,10 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.RichTextBox codeBox1;
         private System.Windows.Forms.TextBox txtOutputName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAssemInf;
+        private FastColoredTextBoxNS.FastColoredTextBox codeBox1;
     }
 }
 
